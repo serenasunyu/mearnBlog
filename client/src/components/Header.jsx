@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Navbar, TextInput } from 'flowbite-react';
+import {Button, Navbar, TextInput } from 'flowbite-react';
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
@@ -15,7 +15,7 @@ export default function Header() {
                 to="/"
                 className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
             >
-                <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white"> 
+                <span className="px-2 py-1 mr-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white"> 
                 Yu's 
                 </span>
                 Blog
@@ -37,7 +37,7 @@ export default function Header() {
             
             <div className='flex gap-2 md:order-2 mt-1'>
                 <Button
-                    className='w-12 h-10 hidden sm:inline mt-1' pill
+                    className='w-12 h-10 hidden sm:flex items-center justify-center mt-1' pill
                 >
                     <FaMoon className='text-black' />
                 </Button>
@@ -48,23 +48,24 @@ export default function Header() {
                         Sign In 
                     </Button>
                 </Link>
-                <Navbar.Toggle className='lg:hidden'/>
+                <Navbar.Toggle aria-label="Toggle navigation" className='lg:hidden'/>
 
             </div>
 
-            <Navbar.Collapse>
-                <Navbar.Link active={path == "/"} as={"div"}>
-                    <Link to="/" className='text-black hover:text-blue-500'> Home </Link>
+            <Navbar.Collapse className='lg:flex lg:justify-evenly'>
+                <Navbar.Link active={path === "/"} as={"div"}>
+                    <Link to="/" className='text-black hover:text-blue-500 mr-6'> Home </Link>
                 </Navbar.Link>
 
-                <Navbar.Link active={path == "/about"} as={"div"}>
-                    <Link to="/about" className='text-black hover:text-blue-500'> About </Link>
+                <Navbar.Link active={path === "/about"} as={"div"}>
+                    <Link to="/about" className='text-black hover:text-blue-500 mr-6'> About </Link>
                 </Navbar.Link>
 
-                <Navbar.Link active={path == "/articles"} as={"div"}>
+                <Navbar.Link active={path === "/articles"} as={"div"}>
                     <Link to="/articles" className='text-black hover:text-blue-500'> Articles </Link>
                 </Navbar.Link>
             </Navbar.Collapse>
+
             
         </Navbar>
 
