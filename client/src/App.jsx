@@ -1,11 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import SignIn from "./pages/SignIn"
-import SignUp from "./pages/SignUp"
-import Dashboard from "./pages/Dashboard"
-import Articles from "./pages/Articles"
-import About from "./pages/About"
-import Home from "./pages/Home"
-import Header from "./components/Header"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import Dashboard from "./pages/Dashboard";
+import Articles from "./pages/Articles";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 
 export default function App() {
   return (
@@ -19,6 +21,7 @@ export default function App() {
         <Route path="/articles" element={<Articles />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
