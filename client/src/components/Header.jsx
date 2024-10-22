@@ -1,16 +1,19 @@
 import { Button, Navbar, TextInput, Dropdown, Avatar } from 'flowbite-react';
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { FaMoon } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from '../redux/theme/themeSlice';
 
 export default function Header() {
     const path = useLocation().pathname;
+    const dispatch = useDispatch();
     const { currentUser } = useSelector(state => state.user);
+    const { theme } = useSelector((state) => state.theme);
 
     return (
         <div>
-            <Navbar className="border-b-2 ml-2 py-2 flex-row justify-between">
+            <Navbar className="border-b-2">
                 <Link
                     to="/"
                     className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
@@ -38,9 +41,14 @@ export default function Header() {
                 </Button>
 
                 {/* Right side: Buttons and Toggle */}
-                <div className="flex gap-2 md:order-2 mt-1">
-                    <Button className="w-12 h-10" color='grey' pill>
-                        <FaMoon />
+                <div className="flex gap-2 md:order-2">
+                    <Button 
+                        className="w-12 h-10 hidden sm:inline" 
+                        color='gray' 
+                        pill
+                        onClick={() => dispatch(toggleTheme())}
+                    >
+                        {theme === 'light' ? <FaSun /> : <FaMoon />}
                     </Button>
 
                     { currentUser ? (
@@ -71,37 +79,34 @@ export default function Header() {
                         </Dropdown>
                     ) :
                     (
-                        <Link to="/sign-in" className="mb-2">
+                        <Link to="/sign-in">
                             <Button gradientDuoTone='purpleToBlue' outline>
                                 Sign In
                             </Button>
                         </Link>
                     )
-
-                    }
-
-                    
+                    }   
 
                     {/* Toggle for Mobile */}
                     <Navbar.Toggle/>
                 </div>
 
                 {/* Collapsible Menu */}
-                <Navbar.Collapse className="lg:flex lg:justify-evenly">
+                <Navbar.Collapse>
                     <Navbar.Link active={path === "/"} as="div">
-                        <Link to="/" className="text-black hover:text-blue-500 mr-6">
+                        <Link to="/">
                             Home
                         </Link>
                     </Navbar.Link>
 
                     <Navbar.Link active={path === "/about"} as="div">
-                        <Link to="/about" className="text-black hover:text-blue-500 mr-6">
+                        <Link to="/about">
                             About
                         </Link>
                     </Navbar.Link>
 
                     <Navbar.Link active={path === "/articles"} as="div">
-                        <Link to="/articles" className="text-black hover:text-blue-500">
+                        <Link to="/articles">
                             Articles
                         </Link>
                     </Navbar.Link>
