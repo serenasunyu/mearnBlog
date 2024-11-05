@@ -3,20 +3,21 @@ import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 
 const TOOLBAR_OPTIONS = [
-  [{ 'header': [1, 2, false] }],
+  [{ header: [1, 2, false] }],
   ['bold', 'italic', 'underline'],
   ['link', 'image'],
-  [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-  [{ 'align': [] }],
+  [{ list: 'ordered' }, { list: 'bullet' }],
+  [{ align: [] }],
   ['clean']
 ];
 
 export default function QuillEditor({ value, onChange }) {
   const editorRef = useRef(null);
   const quillRef = useRef(null);
+  const didMountRef = useRef(false);
 
   useEffect(() => {
-    if (editorRef.current) {
+    if (editorRef.current && !quillRef.current) {
       quillRef.current = new Quill(editorRef.current, {
         theme: 'snow',
         placeholder: 'Write something...',
@@ -27,7 +28,7 @@ export default function QuillEditor({ value, onChange }) {
 
       // Set initial content if provided
       if (value) {
-        quillRef.current.root.innerHTML = value;
+        quillRef.current.clipboard.dangerouslyPasteHTML(value);
       }
 
       // Handle content changes
@@ -45,6 +46,16 @@ export default function QuillEditor({ value, onChange }) {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (quillRef.current && didMountRef.current) {
+      if (value !== quillRef.current.root.innerHTML) {
+        quillRef.current.clipboard.dangerouslyPasteHTML(value);
+      }
+    } else {
+      didMountRef.current = true;
+    }
+  }, [value]);
 
   return (
     <div className="quill-editor">
