@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
-import Articles from "./pages/Articles";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Header from "./components/Header";
@@ -14,6 +13,7 @@ import UpdatePost from "./pages/UpdatePost";
 import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Search from "./pages/Search";
+import Projects from "./pages/Projects";
 
 
 export default function App() {
@@ -34,7 +34,7 @@ export default function App() {
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/update-post/:postId" element={<UpdatePost />} />
         </Route>
-        <Route path="/articles" element={<Articles />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/post/:postSlug" element={<PostPage />} />
         
       </Routes>
