@@ -26,6 +26,12 @@ const __dirname = path.resolve();
 
 const app = express();
 
+// Set Cross-Origin-Opener-Policy header
+app.use((req, res, next) => {
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+    next();
+  });
+
 app.use(express.json());
 
 app.use(cookieParser());
