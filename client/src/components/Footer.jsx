@@ -25,7 +25,7 @@ export default function FooterComponent() {
                     <Footer.Title title="About" />
                     <Footer.LinkGroup col>
                         <Footer.Link
-                            href="https://www.100jsprojects.com"
+                            href="https://github.com/serenasunyu/100-JavaScript-Projects"
                             target='_blank'
                             rel="noopener noreferrer"
                         >
