@@ -12,7 +12,7 @@ export default function CallToAction() {
                 Checkout these resources with 100 Javascript Projects.
             </p>
             <Button gradientDuoTone="purpleToPink" className="rounded-tl-xl rounded-bl-none">
-                <a href="https://wwww.100jsprojects.com" target="_blank" rel="noopener noreferer"> 
+                <a href="https://github.com/serenasunyu/100-JavaScript-Projects" target="_blank" rel="noopener noreferer"> 
                     100 Javascript Projects
                 </a>
             </Button>
