@@ -2,40 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-bosy {
-    height: 100vh;
+ /* General text styling */
+h3, h4 {
+  font-family: 'Arial', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
 }
 
-.ql-editor {
-    font-size: 1.05rem;
+h3 {
+  font-size: 1.75rem;
+  color: #333;
 }
 
-.post-content p {
-    margin-bottom: 0.5rem;
-  }
-  
-  .post-content h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: sans-serif;
-    margin: 1.5rem 0;
-  }
-  
-  .post-content h2 {
-    font-size: 1.4rem;
-    font-family: sans-serif;
-    margin: 1.5rem 0;
-  }
-  
-  .post-content a {
-    color: rgb(73, 149, 199);
-    text-decoration: none;
-  }
-  
-  .post-content a:hover {
-    text-decoration: underline;
-  }
-  
-  .dark .post-content a {
-    color: red;
-  }
+h4 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Styling for bullet lists */
+
+.post-content ol li[data-list="bullet"] {
+  list-style-type: disc;
+  padding-left: 1.5rem; 
+  margin-bottom: 0.5rem; 
+}
+
+/* Styling for ordered lists */
+.post-content ol li[data-list="ordered"] {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem; 
+}
+
+/* Styling for lists */
+ol, ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+/* Styling for code blocks */
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #ECECEC;
+  color: #d63384;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.ql-code-block-container {
+  background-color: rgb(25, 24, 24);
+  border-left: 4px solid #d1d5db;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.ql-code-block {
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: white;
+  white-space: pre-wrap;
+}
+
+/* Strong (bold) text */
+strong {
+  font-weight: bold;
+  color: #222;
+}
+
+/* Handle links (if any) */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

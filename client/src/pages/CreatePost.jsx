@@ -44,7 +44,7 @@ export default function CreatePost() {
     
     return null;
   };
-
+console.log(formData.content);
   // Memoize the handleFormChange function
   const handleFormChange = useCallback((field, value) => {
     setFormData(prev => ({

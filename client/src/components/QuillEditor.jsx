@@ -3,15 +3,15 @@ import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 
 const TOOLBAR_OPTIONS = [
-  [{ header: [1, 2, false] }],
+  [{ header: [1, 2, 3, false] }],
   ['bold', 'italic', 'underline'],
-  ['link', 'image'],
+  ['link','blockquote', 'code-block', 'image'],
   [{ list: 'ordered' }, { list: 'bullet' }],
   [{ align: [] }],
   ['clean']
 ];
 
-export default function QuillEditor({ value, onChange }) {
+export default function QuillEditor({ value, onChange}) {
   const editorRef = useRef(null);
   const quillRef = useRef(null);
   const didMountRef = useRef(false);
