@@ -52,11 +52,11 @@ export default function FooterComponent() {
                             github
                         </Footer.Link>
                         <Footer.Link
-                            href="#"
+                            href="https://www.linkedin.com/in/serenasunyu"
                             target='_blank'
                             rel="noopener noreferrer"
                         >
-                            Discord
+                            Linkedin
                         </Footer.Link>
                     </Footer.LinkGroup>
                     </div>
@@ -89,11 +89,11 @@ export default function FooterComponent() {
             <div>
                 <Footer.Copyright href="#" by="Yu's Blog" year={new Date().getFullYear()}/>
                 <div className="flex gap-6 mt-4 sm:justify-center">
-                    <SocialIcon network="github" url="https://github.com" style={{ width: 25, height: 25 }}/>
-                    <SocialIcon network="twitter" url="#" style={{ width: 25, height: 25 }}/>
-                    <SocialIcon network="facebook" url="#" style={{ width: 25, height: 25 }}/>
-                    <SocialIcon network="instagram" url="#" style={{ width: 25, height: 25 }}/>
-                    <SocialIcon network="discord" url="#" style={{ width: 25, height: 25 }}/>
+                    <SocialIcon network="github" url="https://github.com/serenasunyu" target={"_blank"} style={{ width: 25, height: 25 }}/>
+                    <SocialIcon network="twitter" url="https://x.com/yu03361217" target={"_blank"} style={{ width: 25, height: 25 }}/>
+                    <SocialIcon network="linkedin" url="https://www.linkedin.com/in/serenasunyu" target={"_blank"} style={{ width: 25, height: 25 }}/>
+                    <SocialIcon network="pinterest" url="https://ca.pinterest.com/2011sunyu" target={"_blank"} style={{ width: 25, height: 25 }}/>
+                    <SocialIcon network="dribbble" url="https://dribbble.com/SerenaaaYa" target={"_blank"} style={{ width: 25, height: 25 }}/>
                 </div>
             </div>
 
